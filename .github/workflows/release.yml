@@ -25,14 +25,14 @@ jobs:
 
       - name: Make postinst executable
         run: |
-          ls -l DEBIAN
-          chmod +x DEBIAN/postinst
-          ls -l DEBIAN
+          ls -l pyserv/DEBIAN
+          chmod +x pyserv/DEBIAN/postinst
+          ls -l pyserv/DEBIAN
 
       - name: Build Debian package
         run: |
           mkdir -p build/pyserv
-          cp -R DEBIAN build/pyserv/
+          cp -R pyserv/DEBIAN build/pyserv/
           mkdir -p build/pyserv/usr/bin
           cp usr/bin/pyserv build/pyserv/usr/bin/
           chmod +x build/pyserv/usr/bin/pyserv
