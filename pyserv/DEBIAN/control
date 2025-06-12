@@ -1,0 +1,7 @@
+Package: Pyserv
+Version: 1.0
+Section: security
+Priority: optional
+Architecture: all
+Maintainer: DLS_OS
+Description: Web server on python to share files securely.
