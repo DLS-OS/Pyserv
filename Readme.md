@@ -20,7 +20,7 @@
 Ensure you have Python 3 and `openssl` installed.
 
 ```bash
-chmod +x pyserv.py
+chmod +x pyserv
 ```
 
 ---
@@ -30,37 +30,37 @@ chmod +x pyserv.py
 ### Start the Server
 
 ```bash
-./pyserv.py start -d /path/to/serve
+./pyserv start -d /path/to/serve
 ```
 
 ### Start with Password Authentication
 
 ```bash
-./pyserv.py start -d /path/to/serve --passwd admin:1234
+./pyserv start -d /path/to/serve --passwd admin:1234
 ```
 
 Or use the default username `admin`:
 
 ```bash
-./pyserv.py start --passwd 1234
+./pyserv start --passwd 1234
 ```
 
 ### Start Without Authentication
 
 ```bash
-./pyserv.py start -d /path/to/serve --nopass
+./pyserv start -d /path/to/serve --nopass
 ```
 
 ### Stop the Server
 
 ```bash
-./pyserv.py stop
+./pyserv stop
 ```
 
 ### Check Server Status
 
 ```bash
-./pyserv.py status
+./pyserv status
 ```
 
 ---
