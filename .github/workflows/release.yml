@@ -5,13 +5,13 @@ on:
     branches:
       - main
     tags:
-      - 'v*'  # Déclenche la release sur push de tags commençant par v
+      - 'v*'  # Déclenche sur push de tags commençant par "v"
 
 permissions:
   contents: write
 
 env:
-  PYSERV_VERSION: 1.0.0  # Mets à jour cette version manuellement ou via tag
+  PYSERV_VERSION: 1.0.0  # Peut être mis à jour manuellement ou extrait du tag
 
 jobs:
   build-and-release:
