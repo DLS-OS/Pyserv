@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 env:
-  PYSERV_VERSION: 1.0 # À ajuster selon la version souhaitée
+  PYSERV_VERSION: 1.0.0
 
 jobs:
   build-and-release:
@@ -25,7 +25,9 @@ jobs:
 
       - name: Make postinst executable
         run: |
+          ls -l DEBIAN
           chmod +x DEBIAN/postinst
+          ls -l DEBIAN
 
       - name: Build Debian package
         run: |
@@ -33,7 +35,7 @@ jobs:
           cp -R DEBIAN build/pyserv/
           mkdir -p build/pyserv/usr/bin
           cp usr/bin/pyserv build/pyserv/usr/bin/
-          chmod +x build/pyserv/usr/bin/pyserv  # Optionnel, si pyserv doit être exécutable
+          chmod +x build/pyserv/usr/bin/pyserv
           cd build
           dpkg-deb --build pyserv
 
