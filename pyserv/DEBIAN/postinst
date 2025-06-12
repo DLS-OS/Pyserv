@@ -1,0 +1,30 @@
+#!/bin/bash
+
+DEST_DIR="/usr/share/pyserv"
+
+echo "[*] Téléchargement de PEAS-NG en cours ..."
+
+# Creer un directory 
+mkdir -p "$DEST_DIR"
+
+URLS=(
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh"
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas_linux_arm"
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas_linux_arm64"
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEASany_ofs.exe"
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEAS.bat"
+  "https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas_darwin_arm64"
+)
+
+for url in "${URLS[@]}"; do
+  file_name=$(basename "$url")
+  echo "[-] Téléchargement de $file_name ..."
+  wget -q -O "$DEST_DIR/$file_name" "$url"
+  if [ $? -ne 0 ]; then
+    echo "[!] Erreur lors du téléchargement de $url"
+  else
+    echo "[+] $file_name téléchargé avec succès"
+  fi
+done
+
+echo "[+] Téléchargement de PEAS-NG terminé. Fichiers enregistrés dans $DEST_DIR"
