@@ -26,5 +26,7 @@ for url in "${URLS[@]}"; do
     echo "[+] $file_name téléchargé avec succès"
   fi
 done
-
 echo "[+] Téléchargement de PEAS-NG terminé. Fichiers enregistrés dans $DEST_DIR"
+
+chmod +x /usr/bin/pyserv
+echo "[+] Mise en place de serveur PyServ finit"
