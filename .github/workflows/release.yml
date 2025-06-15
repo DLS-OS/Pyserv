@@ -49,7 +49,7 @@ jobs:
       - name: Create GitHub Release (even without tag)
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: main-${{ github.run_number }}
+          tag_name: latest
           name: Release main build #${{ github.run_number }}
           files: build/pyserv-v${{ env.PYSERV_VERSION }}.deb
           draft: false
